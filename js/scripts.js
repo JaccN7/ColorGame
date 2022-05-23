@@ -49,6 +49,7 @@ function generarSquares() {
                 reset.textContent = "Jugar de nuevo";
                 titulo.style.backgroundColor = colors[i];
                 changeColors(clickedColor);
+                //Deshabilitar el pointerEvent de los cuadrados al ganar el juego
                 disableSquares("gano");
             } else {
                 squares[i].style.backgroundColor = backgroundBody;
@@ -94,31 +95,35 @@ function generateRandomColors(numberOfSquares) {
 
 //Resetear juego (Recuperar valores iniciales)
 function resetGame() {
-    //Generar un arreglo de colores para la x cantidad de cuadrados
+    //Generar un arreglo de colores para una x cantidad de cuadrados
     colors = generateRandomColors(numberOfSquares);
     pickedColor = pickColor();
     colorDisplay.innerHTML = pickedColor;
     message.textContent = "";
     reset.textContent = "Nuevos Colores";
     titulo.style.backgroundColor = "#009dff";
+    //Cada ves que se llame a resetGame se establece el estado "jugando para activar el pointerEvents"
     disableSquares("jugando")
+    //Iterar sobre los squares 
     for (let i = 0; i < squares.length; i++) {
-        squares[i].style.backgroundColor = colors[i];
-        //si existe un color 
+        //Comprobar si existe un color en una posicion i.
         if (colors[i] != undefined) {
             squares[i].style.display = "block";
+            //Si el color en la posicion i existe, entonces sera asignado a un cuadrado
             squares[i].style.backgroundColor = colors[i];
         } else {
+            //Si el color es undefined el cuadrado se ocultara
             squares[i].style.display = "none";
         }
     }
 }
 
+//Cada vez que se haga haga click en el boton reset se invocara la funcion resetGame
 reset.addEventListener("click", function () {
     resetGame();
 })
 
-
+//Eventos para los botones con los niveles de dificultad
 nivelFacil.addEventListener("click", function () {
     nivelFacil.classList.add("selected");
     nivelDificil.classList.remove("selected");
@@ -133,7 +138,6 @@ nivelDificil.addEventListener("click", function () {
     resetGame();
 })
 
-//Funcion extra a la pauta
 //Bloquear cuadrados al ganar el juego
 function disableSquares(estadoJuego) {
     for (let i = 0; i < squares.length; i++) {

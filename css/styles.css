@@ -24,7 +24,7 @@ body {
 }
 
 .square:hover {
-    opacity: 0.7; /*Opacidad aplicada al cuadrado cuadno pasamos el mouse sobre el cuadrado*/
+    opacity: 0.7; /*Opacidad aplicada al cuadrado cuando pasamos el mouse sobre el cuadrado*/
 }
 
 h1 {
@@ -57,7 +57,6 @@ button {
     font-weight: 700;
     letter-spacing: 1px;
     outline: none;
-    
 }
 
 button:hover {
