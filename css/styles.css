@@ -1,0 +1,76 @@
+/* Fuente de GoogleFonts - Merriweather*/
+@import url('https://fonts.googleapis.com/css2?family=Merriweather&display=swap');
+
+body {
+    background-color: #232323;
+    margin: 0;
+    font-family: 'Merriweather', serif;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.square {
+    float: left;
+    width: 30%;
+    height: 0;
+    padding-bottom: 30%;
+    background-color: aliceblue;
+    margin: 1%;
+    border-radius: 15%;
+    transition: background 0.4s;
+}
+
+.square:hover {
+    opacity: 0.7; /*Opacidad aplicada al cuadrado cuadno pasamos el mouse sobre el cuadrado*/
+}
+
+h1 {
+    color: #ffffff;
+    -webkit-text-stroke: 0.1px black; /*Fuente con borde*/
+    text-transform: uppercase;
+    background-color: #009dff;
+    text-align: center;
+    margin: 0; /* Margin 0 para que resetear los margenes */
+}
+
+#stripe {
+    background-color: #ffffff;
+    width: 100%;
+    height: 30px;
+    text-align: center;
+}
+
+#message {
+    color: black;
+    display: inline-block;
+    width: 25%; /* Tamaño del mensaje fijo para que no se desplacen los botones */
+}
+
+button {
+    border: none;
+    background-color: transparent;
+    text-transform: uppercase;
+    height: 100%;
+    font-weight: 700;
+    letter-spacing: 1px;
+    outline: none;
+    
+}
+
+button:hover {
+    color: white;
+    background: #009dff;
+    -webkit-text-stroke: 0.1px black;
+}
+
+#colorDisplay {
+    font-size: 1.5em;
+}
+
+.selected {
+    color: #ffffff;
+    background-color: #009dff;
+}
