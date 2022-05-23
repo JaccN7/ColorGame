@@ -43,7 +43,6 @@ function generarSquares() {
     for (let i = 0; i < squares.length; i++) {
         squares[i].addEventListener("click", function () {
             clickedColor = colors[i];
-            console.log(clickedColor);
             if (pickedColor === clickedColor) {
                 message.textContent = "¡Correcto!";
                 reset.textContent = "Jugar de nuevo";
@@ -85,11 +84,9 @@ function randomColor() {
 //Generar arreglo colors con colores aleatorios
 function generateRandomColors(numberOfSquares) {
     let generarColores = [];
-    console.log(numberOfSquares);
     for (let i = 0; i < numberOfSquares; i++) {
         generarColores.push(randomColor());
     }
-    console.log(generarColores);
     return generarColores;
 }
 
